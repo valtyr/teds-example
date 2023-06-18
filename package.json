@@ -7,12 +7,34 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.0.0",
     "@turbo/gen": "^1.9.7",
     "eslint": "^7.32.0",
-    "eslint-config-custom": "workspace:*",
     "prettier": "^2.5.1",
+    "prettier-plugin-tailwindcss": "0.2.4",
     "turbo": "latest"
   },
   "packageManager": "pnpm@7.15.0",
-  "name": "teds-example"
+  "name": "teds-example",
+  "prettier": {
+    "tabWidth": 2,
+    "singleQuote": true,
+    "bracketSameLine": true,
+    "trailingComma": "all",
+    "importOrder": [
+      "^\\./env$",
+      "^(react|react-native)$",
+      "^(@)?expo.*$",
+      "<THIRD_PARTY_MODULES>",
+      "^@kosningar/.*$",
+      "^~/.*$",
+      "^[./]"
+    ],
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true,
+    "plugins": [
+      "@trivago/prettier-plugin-sort-imports",
+      "prettier-plugin-tailwindcss"
+    ]
+  }
 }

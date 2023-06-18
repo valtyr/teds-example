@@ -1,0 +1,8 @@
+name = "worker"
+main = "src/worker.ts"
+compatibility_date = "2023-06-18"
+
+[durable_objects]
+bindings = [
+  { name = "PRODUCER", class_name = "Producer" }
+]
