@@ -9,7 +9,7 @@ const MessageComposer = () => {
 
   const onButtonClicked = async () => {
     await fetch(
-      `http://localhost:8787/api/message/new?${new URLSearchParams({
+      `http://localhost:6283/api/message/new?${new URLSearchParams({
         message,
       })}`,
       { method: 'POST' },
@@ -52,7 +52,7 @@ const MessageViewer = () => {
 
 export default function Page() {
   return (
-    <consumer.Provider url="ws://localhost:8787/api/events">
+    <consumer.Provider url="ws://localhost:6283/api/events">
       <MessageComposer />
 
       <MessageViewer />
